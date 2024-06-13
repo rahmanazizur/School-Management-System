@@ -1,0 +1,84 @@
+
+
+<div class="form-container" style="margin-top: 60px;">
+    <h1>Add Teacher information:</h1>
+    
+    <div class="row">
+  
+      <div class="col-2">
+  
+        <!-- <img src="assets/images/signin2.avif" > -->
+      
+      
+      
+      </div>
+  
+      <div class="col-10">
+    <form (ngSubmit)="addteacher()">
+      <div class="input-group">
+        <label><strong> ID:</strong></label>
+        <input type="text" placeholder="Enter ID" id="id" name="id" [(ngModel)]="id">
+      </div>
+  
+      <div class="input-group">
+        <label><strong> Name:</strong></label>
+        <input type="text" placeholder="Enter Your First Name" id="fname" name="name" [(ngModel)]="name">
+      </div>
+  
+   
+
+      <div class="input-group">
+        <label><strong>Email Address:</strong></label>
+        <input type="email"  placeholder="Enter Email" id="email-id" name="email" [(ngModel)]="email">
+      </div>
+  
+      <div class="input-group">
+        <label><strong>Password:</strong></label>
+        <input type="text"  placeholder="Enter Password" id="password" name="password" [(ngModel)]="password">
+      </div>
+  
+      <div class="input-group">
+        <label><strong>Qualification:</strong></label>
+        <input type="text" placeholder="Enter status" id="qualification" name="qualification" [(ngModel)]="qualification" >
+      </div>
+    
+
+
+      <div class="input-group">
+        <label><strong>Mobile No.:</strong></label>
+        <input type="text"  id="phone-no"  placeholder="Enter mob number" name="Mobile no" name="mob" [(ngModel)]="mob">
+      </div>
+  
+   
+      <div class="input-group">
+        <label><strong>role:</strong></label>
+        <input type="text" placeholder="Enter role" id="role" name="role" [(ngModel)]="role" >
+      </div>
+
+
+
+      <div class="input-group">
+        <label><strong>Status:</strong></label>
+        <input type="text" placeholder="Enter status" id="Status" name="status" [(ngModel)]="status" >
+      </div>
+    
+      <div class="input-group">
+        <label><strong>Joining Date:</strong></label>
+        <input type="date" placeholder="Enter status" id="Joining_date" name="Joining_date" [(ngModel)]="joining_date" >
+      </div>
+    
+  
+    <button >Submit</button>
+
+
+  
+    
+   
+  </form>
+  </div>
+  
+  
+  
+  </div>
+  
+  </div>

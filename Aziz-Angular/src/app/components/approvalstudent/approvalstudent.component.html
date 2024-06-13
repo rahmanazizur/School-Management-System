@@ -1,0 +1,143 @@
+<div class="form-container" style="margin-top: 60px;">
+    <h1>Online Admission Form:</h1>
+
+    <div class="row">
+
+        <div class="col-2">
+
+        </div>
+
+        <div class="col-10">
+            <form (ngSubmit)="Approve()">
+
+                <div class="input-group">
+                    <label><strong>Full Name:</strong></label>
+                    <input type="text" placeholder="Enter Your full_name" id="full_name" name="full_name"
+                        [(ngModel)]="full_name">
+                </div>
+
+
+
+                <div class="input-group">
+                    <label><strong>Date of Birth:</strong></label>
+                    <input type="date" placeholder="Enter date of Birth" id="dob" name="dob" [(ngModel)]="dob">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Email Address:</strong></label>
+                    <input type="email" placeholder="Enter Email" id="email-id" name="email" [(ngModel)]="email">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Mobile No.:</strong></label>
+                    <input type="text" id="phone-no" placeholder="Enter mob number" name="Mobile no" name="mob"
+                        [(ngModel)]="mob">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Gender:</strong></label>
+                    <select name="gender" id="gender" name="gender" [(ngModel)]="gender">
+                        <option value="" selected="selected">Please select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                </div>
+                <div class="input-group">
+                    <label><strong>Father's Name:</strong></label>
+                    <input type="text" id="phone-no" placeholder="Fathers Name" name="Mobile no" name="fathername"
+                        [(ngModel)]="fathername">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Mother's Name:</strong></label>
+                    <input type="text" id="phone-no" placeholder="Enter mothername " name="mothername no"
+                        name="mothername" [(ngModel)]="mothername">
+                </div>
+
+
+
+
+                <div class="input-group">
+                    <label><strong>Class:</strong></label>
+                    <select name="class" id="class" name="class" [(ngModel)]="class1">
+                        <option value="" selected="selected">Please select Class</option>
+                        <option value="1st">One</option>
+                        <option value="2nd">Two</option>
+                        <option value="3rd">Three</option>
+                        <option value="4th">Four</option>
+                        <option value="5th">Five</option>
+                        <option value="6th">Six</option>
+                        <option value="7th">Seven</option>
+                        <option value="8th">Eight</option>
+                        <option value="9th">Nine</option>
+                        <option value="10th">Ten</option>
+
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Section:</strong></label>
+                    <select name="section" id="section" name="section" [(ngModel)]="section">
+                        <option *ngFor="let x of sectionOptionList" [value]="x">{{x}}</option>
+                    </select>
+                </div>
+
+
+
+
+                <div class="input-group">
+                    <label><strong> Present Address:</strong></label>
+                    <input type="text" placeholder="Enter present Address" id="address" name="present_address"
+                        [(ngModel)]="present_address">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Permanent Address:</strong></label>
+                    <input type="text" placeholder="Enter Permanent address" id="pincode" name="permanent_address"
+                        [(ngModel)]="permanent_address">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>User Name</strong></label>
+                    <input type="text" id="username" placeholder="Enter username " name="username" name="username"
+                        [(ngModel)]="username">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Session:</strong></label>
+                    <input type="text" placeholder="Enter session" id="session" name="session" [(ngModel)]="session">
+                </div>
+<!-- ...............//newly added -->
+                <!-- <div class="input-group">
+                    <label><strong>Section:</strong></label>
+                    <input type="text" placeholder="select section" id="section" name="section" [(ngModel)]="section">
+                </div> -->
+
+
+                <div class="input-group">
+                    <label><strong>Password</strong></label>
+                    <input type="Password" id="Password" placeholder="Enter Password " name="Password" name="Password"
+                        [(ngModel)]="password">
+                </div>
+
+                <div class="input-group">
+                    <label><strong>Upload Photo</strong></label>
+                    <input type="file" id="image" placeholder="Upload image " name="image" name="image"
+                        [(ngModel)]="image">
+                </div>
+
+
+
+             <button type="submit" >Approval</button>
+
+
+
+            </form>
+        </div>
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+  
+        <form class="for" (ngSubmit)="saveResult()">
+            <div class="row input-group">
+              <div class="col-md-4">
+                <label><strong>Class:</strong></label>
+                <select name="class" id="class" name="class1" [(ngModel)]="class1" 
+                  (ngModelChange)="selectedClassChanged()" [disabled]="enableSaveButton">
+                  <option *ngFor="let class1 of classList" [value]="class1">{{class1}}</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label><strong>Section:</strong></label>
+                <select name="section" id="section" name="section" [(ngModel)]="section" 
+                  (ngModelChange)="selectedSectionChanged()" [disabled]="enableSaveButton">
+                  <option *ngFor="let section of sectionList" [value]="section">{{section}}</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label><strong>Exam Title:</strong></label>
+                <select id="examTitle" name="examTitle" [(ngModel)]="examTitle" 
+                  (ngModelChange)="getStudentResultInfoList()" [disabled]="enableSaveButton">
+                  <option *ngFor="let examTitle of allExamTitleList" [value]="examTitle">{{examTitle}}</option>
+                </select>
+              </div>
+            </div>
+
+            <table class="table stripe grid" style="margin-top:20px;">
+              <tr>
+                <th class="fw-bolder">Student ID</th>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Section</th>
+                <th *ngFor="let subject of allSubjectList">{{subject}}</th>
+                <th>Total Marks</th>
+                <th>Grade</th>
+                <th>Pass/Fail</th>
+              </tr>
+
+              <tr *ngFor="let studentResult of studentResultInfoList">
+                <td>{{studentResult.student_id}}</td>
+                <td>{{studentResult.full_name}}</td>
+                <td>{{studentResult.class1}}</td>
+                <td>{{studentResult.section}}</td>
+                <td *ngFor="let subject of studentResult?.subjectwise_result_map?.keys()">
+                  <div>
+                    <input type="number" name="marks" min="0" max="100" 
+                      [ngStyle]="isFailMarks(studentResult.subjectwise_result_map.get(subject)) ? {'background-color': '	#FF033E'} : null"
+                      [value]="studentResult.subjectwise_result_map.get(subject)" 
+                      (change)="updateMarks($event, subject, studentResult)">
+                  </div>
+                </td>
+                <td>{{studentResult.total_marks}}</td>
+                <td>{{studentResult.grade}}</td>
+                <td [ngStyle]="studentResult.pass_fail == 'PASS' ? {'background-color': '#5BC85B'} 
+                  : studentResult.pass_fail == 'FAIL' ? {'background-color': '	#FF033E'} : null">{{studentResult.pass_fail == 'PASS' ? 'PASS' : studentResult.pass_fail == 'FAIL' ? 'FAIL' : null}}</td>
+              </tr>
+            </table>
+  
+            <button type="submit" class="{{enableSaveButton ? 'btn btn-primary' : 'btn'}}" [disabled]="!enableSaveButton">Save Result</button>
+            <button type="button" class="btn btn-light" style="margin-left:5px;" (click)="cancelChanges()"> Cancel </button>
+          </form>
+  
+  
+    </div>
+  </div>

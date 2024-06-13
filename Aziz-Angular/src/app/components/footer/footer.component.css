@@ -1,0 +1,32 @@
+.footer{
+
+    color: red;
+        background-color:#06273D;
+        margin-top: 27px;
+    }
+    h5{
+        color: hsl(176, 63%, 55%);
+        font-size: 14pt;
+    }
+    p{color: white;
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+    
+    }
+    
+    span{
+    
+        margin-left: 20px;
+    }
+    
+    button{
+        color:white;
+        
+    
+    }
+    a{
+    text-decoration: none;
+    
+    
+    }

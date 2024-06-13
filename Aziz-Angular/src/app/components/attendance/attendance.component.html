@@ -1,0 +1,55 @@
+
+<div class="form-container" style="margin-top: 60px;">
+    <h1>Take Attendance:</h1>
+  
+    <div class="row">
+  
+      <div class="col-2">
+   
+      </div>
+  
+      <div class="col-10">
+        <form (ngSubmit)="takeAttendance()">
+          <div class="input-group">
+            <label><strong>Student ID:</strong></label>
+            <input type="text" id="studentId" name="studentId" [(ngModel)]="studentId" (ngModelChange)="studentIdChanged()">
+          </div>
+          <div class="input-group">
+            <label><strong>Student Name:</strong></label>
+            <input type="text" id="fname" name="full_name" [(ngModel)]="selectedStudentInfo.full_name" [disabled]="true">
+          </div>
+  
+          <div class="input-group">
+            <label><strong>Class:</strong></label>
+            <input type="text" id="class" name="class1" [(ngModel)]="selectedStudentInfo.class1" [disabled]="true">
+          </div>
+          <div class="input-group">
+            <label><strong>Section:</strong></label>
+            <input type="text" name="section" [(ngModel)]="selectedStudentInfo.section" [disabled]="true">
+          </div>
+
+          <div class="input-group">
+            <label><strong>Attendance Date</strong></label>
+            <input type="date" id="attendanceDate" name="attendanceDate" [(ngModel)]="attendanceDate" required>
+          </div>
+
+        <div>
+            <label class="label-radio"><strong>Attendance Status: </strong></label>
+              <input type="radio" id="present" name="attendanceStatus" value="present" [(ngModel)]="attendanceStatus"/>
+              <label class="label-radio" for="present">Present</label>
+          
+              <input type="radio" id="absent" name="attendanceStatus" value="absent" [(ngModel)]="attendanceStatus"/>
+              <label class="label-radio" for="absent">Absent</label>
+        </div>
+
+  
+          <button type="submit">Save Attendance</button>
+  
+        </form>
+      </div>
+  
+  
+  
+    </div>
+  
+  </div>

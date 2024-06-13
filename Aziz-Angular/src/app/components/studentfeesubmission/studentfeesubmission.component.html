@@ -1,0 +1,151 @@
+<div class="container-query">
+    <fieldset>
+        <legend>Query for Payment Records</legend>
+        <button class="btn btn-primary" (click)="queryForFeeRecords()">Query</button>
+        <button class="btn btn-light" (click)="clearQuery()">Clear</button>
+        <div class="input-group">
+            <label><strong>Fee Name:</strong></label>
+            <select id="queryFeeName" name="queryFeeName" style="width: 130px;" [(ngModel)]="queryObject.fee_name" (ngModelChange)="feeNameChanged()">
+                <option *ngFor="let x of allFeeNameList" [value]="x">{{x}}</option>
+            </select>
+        </div>
+        <div class="input-group" *ngIf="queryObject.fee_name == 'Monthly Fee'">
+            <label><strong>Month:</strong></label>
+            <select id="queryMonthName" name="queryMonthName" style="width: 130px;" [(ngModel)]="queryMonthName">
+                <option *ngFor="let x of monthNameList" [value]="x">{{x}}</option>
+            </select>
+            <label style="margin-left: 50px;"><strong>Year:</strong></label>
+            <select id="queryyearName" name="queryyearName" style="width: 130px;" [(ngModel)]="queryYearName">
+                <option *ngFor="let x of lastFiveYears" [value]="x">{{x}}</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label><strong>Payment Approval Status:</strong></label>
+            <select id="queryPaymentStatus" name="queryPaymentStatus" style="width: 130px;" [(ngModel)]="queryObject.paymentStatus">
+                <option *ngFor="let x of paymentStatusList" [value]="x">{{x}}</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label><strong>Fee Submission Start Date:</strong></label>
+            <input type="date" id="queryStartDate" name="queryStartDate" [(ngModel)]="queryObject.start_date">
+        </div>
+
+        <div class="input-group">
+            <label><strong>Fee Submission End Date:</strong></label>
+            <input type="date" id="queryEndDate" name="queryEndDate" [(ngModel)]="queryObject.end_date">
+        </div>
+    </fieldset>
+    
+</div>
+
+<div class="table" style="margin-top: 20px; width: 95%;">
+    <h1>Fee Details:</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <table  style="margin-top:20px; margin-left: 50px;">
+            <tr>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Class</th>
+              <th>Section</th>
+
+              <th>Fee Name</th>
+              <th>Fee Amount</th>
+              <th>Month Name</th>
+              <th>Fee Submission Start Date</th>
+              <th>Fee Submission End Date</th>
+
+              <th>Transaction ID</th>
+              <th>Payment Amount</th>
+              <th>Payment Date</th>
+              <th>Payment Status</th>
+              <th>Payment Remarks</th>
+              <th>Pay Fee</th>
+            </tr>
+
+                <tr *ngFor="let feePayment of feePaymentList">
+                  <td>{{feePayment.student_id}}</td>
+                  <td>{{feePayment.stu_full_name}}</td>
+                  <td>{{feePayment.class1}}</td>
+                  <td>{{feePayment.section}}</td>
+    
+                  <td>{{feePayment.fee_name}}</td>
+                  <td>{{feePayment.fee_amount}}</td>
+                  <td>{{feePayment.monthName}}</td>
+                  <td>{{feePayment.start_date}}</td>
+                  <td>{{feePayment.end_date}}</td>
+                
+                  <td>{{feePayment.transaction_id}}</td>
+                  <td>{{feePayment.payment_amount}}</td>
+                  <td>{{feePayment.payment_date}}</td>
+                  <td>{{feePayment.payment_status}}</td>   
+                  <td>{{feePayment.paymentRemarks}}</td>
+                  <td (click)="showSubmitPaymentModal(feePayment, '#paymentDetailModal')">
+                    <img src="assets/images/payicon.PNG" height="50px" width="50px">
+                  </td>  
+                </tr>
+
+            
+          </table>
+      </div>
+    </div>
+</div>
+
+<!-- modal -->
+<div class="modal" id="paymentDetailModal" tabindex="-1" role="dialog" data-backdrop="static"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-content-fullscreen" role="document">
+      <div class="modal-content modal-content-fullscreen">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Payment Details</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6 input-group-modal">
+                    <label><strong>Transaction Id:</strong></label>
+                    <input type="text" id="modalTransactionId" name="modalTransactionId" [(ngModel)]="feePaymentModalObj.transaction_id" (ngModelChange)="modalDataModified()">
+                </div>
+                <div class="col-md-6 input-group-modal">
+                    <label><strong>Payment Status:</strong></label>
+                    <input type="text" id="modalPayStatus" name="modalPayStatus" [(ngModel)]="feePaymentModalObj.payment_status" [disabled]="true">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-4 input-group-modal" style="padding: 10px;">
+                    <label>Payment Method:</label>
+                    <input type="text" id="modalPayMethod" name="modalPayMethod" [(ngModel)]="feePaymentModalObj.payment_method" [disabled]="true">
+                </div>
+                <div class="col-md-4 input-group-modal" style="padding: 10px;">
+                    <label>Payment Amount:</label>
+                    <input type="text" id="modalPayAmount" name="modalPayAmount" [(ngModel)]="feePaymentModalObj.payment_amount" [disabled]="true">
+                </div>
+                <div class="col-md-4 input-group-modal" style="padding: 10px;">
+                    <label>Payment Date:</label>
+                    <input type="text" id="modalPayDate" name="modalPayDate" [(ngModel)]="feePaymentModalObj.payment_date" [disabled]="true">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 input-group-modal" style="padding: 10px;">
+                    <label>Bank Name:</label>
+                    <input type="text" id="modalBankName" name="modalBankName" [(ngModel)]="feePaymentModalObj.bankName" (ngModelChange)="modalDataModified()">
+                </div>
+                <div class="col-md-4 input-group-modal" style="padding: 10px;">
+                    <label>Account Number:</label>
+                    <input type="text" id="modalAccNumber" name="modalAccNumber" [(ngModel)]="feePaymentModalObj.accountNumber" (ngModelChange)="modalDataModified()">
+                </div>
+                <div class="col-md-4 input-group-modal" style="padding: 10px;">
+                    <label>Account Name:</label>
+                    <input type="text" id="modalAccName" name="modalAccName" [(ngModel)]="feePaymentModalObj.accountName" (ngModelChange)="modalDataModified()">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="!dataModified"
+                (click)="submitPayment('#paymentDetailModal')">Fee Submit
+            </button>
+          
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideModal('#paymentDetailModal')">Close</button>
+        </div>
+      </div>
+    </div>
+</div>

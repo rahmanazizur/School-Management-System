@@ -1,0 +1,129 @@
+
+<!-- ........Class routine............ -->
+
+<div class="container" style=" margin-top: 100px;">  
+    <div class="container" style=" border-top-left-radius: 10px; border-bottom-right-radius: 20px; text-align: center; color:black; padding-top: 7px; margin-top: 5px;">
+   
+    
+        <p style="font-size: 20px;">Class Routine</p>
+        <p>Session:2024-2025</p>
+        <button class="button-17" role="button" routerLink="/classtimetable">See Class Routine</button>
+  
+    </div>
+
+    </div>
+    
+
+    <!-- form -->
+    
+
+<div class="form-container" style="margin-top: 5px;">
+
+    
+    <div class="row">
+  
+      <div class="col-3">
+  
+        <!-- <img src="assets/images/signin2.avif" > -->
+      
+    
+      
+      </div>
+     
+      <div class="col-9">
+    <form (ngSubmit)="saveClassRoutine()" >
+      
+        <div class="input-group">
+            <label><strong>Day:</strong></label>
+            <select name="day" id="day" name="day"  [(ngModel)]="day">
+              <option value="" selected="selected">select Day</option>
+              <option value="Sunday" >Sunday</option>
+              <option value="Monday" >Monday</option>
+              <option value="Tuesday" >Tuesday</option>
+              <option value="Wednesday" >Wednesday</option>
+              <option value="Thursday" >Thursday</option>
+             
+
+            </select>
+             
+          </div> 
+         
+ 
+  
+          <div class="input-group">
+            <label><strong>Class:</strong></label>
+            <select name="class" id="class" name="class1"  [(ngModel)]="class1"  (ngModelChange)="classValueChange()" >
+              <option value="" selected="selected">Please select Class</option>
+              <option value="1st" >1st</option>
+              <option value="2nd" >2nd</option>
+              <option value="3rd">3rd</option>
+              <option value="4th" >4th</option>
+              <option value="5th" >5th</option>
+              <option value="6th">6th</option>
+              <option value="7th" >7th</option>
+              <option value="8th" >8th</option>
+              <option value="9th">9th</option>
+              <option value="10th">10th</option>
+              
+            </select>
+          </div> 
+
+          <div class="input-group">
+            <label><strong>Section:</strong></label>
+            <select  name="section" id="section" name="section" [(ngModel)]="section" (ngModelChange)="getSubjectList()">
+                <option *ngFor="let x of sectionOptionList" [value]="x">{{x}}</option>
+            </select>
+          </div> 
+   
+          <div class="input-group">
+            <label><strong>Subject:</strong></label>
+            <select name="subject" id="subject" name="subject" [(ngModel)]="subject" >
+              <option *ngFor="let x of allSubjectList" [value]="x">{{x}}</option>
+            </select>
+          </div> 
+          
+      <div class="input-group">
+        <label><strong>Start Time:</strong></label>
+        <input type="time" placeholder="Enter start time no" id="room_no" name="Start_time" [(ngModel)]="start_time"   >
+      </div>
+
+      <div class="input-group">
+        <label><strong>End Time:</strong></label>
+        <input type="time" placeholder="Enter end time" id="end_time" name="end_time" [(ngModel)]="end_time"  >
+      </div>
+  
+  
+      <div class="input-group">
+        <label><strong>Teacher:</strong></label>
+        <select name="teacher" id="teacher" name="teacher" [(ngModel)]="teacher" >
+         <option *ngFor="let x of allTeacherNameList" [value]="x">{{x}}</option>
+        </select>
+      </div> 
+     
+  
+
+   
+
+      <div class="input-group">
+        <label><strong>Room No:</strong></label>
+        <input type="text" placeholder="Enter room no" id="room_no" name="room_no"  [(ngModel)]="room_no"   >
+      </div>
+  
+
+    
+    
+  
+    <button type="submit">Add Class Routine</button>
+  
+  
+   
+  </form>
+
+  </div>
+  
+  
+  
+  </div>
+  
+  </div>
+    

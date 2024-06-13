@@ -1,0 +1,54 @@
+<div class="sidebar ss"> 
+<div class="row">
+    <div class="col-sm-2">
+      <div class="card">
+     
+<mat-card class="sidemat">
+    <mat-action-list>
+        <div mat-subheader>Admin Profile</div>
+    
+        <button  mat-list-item ><mat-icon mat-list-icon>home</mat-icon>Home</button>
+
+
+
+        <button mat-list-item >
+            <mat-icon mat-list-icon>account_circle</mat-icon>Profile
+        </button>
+
+        
+        <button mat-list-item routerLink="">
+            <mat-icon mat-list-icon>dashboard</mat-icon>Dashboard
+        </button>
+            
+
+        <button mat-list-item routerLink="/addstudent">
+            <mat-icon mat-list-icon>school</mat-icon>Add Student
+        </button>
+
+        <button mat-list-item routerLink="/viewstudent" (click)="getdata()">
+            <mat-icon mat-list-icon >attribution</mat-icon>view student
+        </button>
+
+
+        <button mat-list-item routerLink="">
+            <mat-icon mat-list-icon><i class="fa-solid fa-user-tie"></i></mat-icon>Add Teacher
+        </button>
+
+        <button mat-list-item routerLink="/home">
+            <mat-icon mat-list-icon>logout</mat-icon>Logout
+        </button>
+
+    </mat-action-list>
+</mat-card>
+
+      </div>
+    </div>
+    <div class="col-sm-10">
+    
+
+
+    </div>
+  </div>
+
+</div>
+

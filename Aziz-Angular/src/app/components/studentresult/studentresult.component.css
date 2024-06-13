@@ -1,0 +1,35 @@
+.container{
+    padding-top: 20px;
+}
+.log{
+    background-color:  rgb(230, 234, 238);
+    border-radius: 10px;
+    margin-top: 100px;
+}
+.for{
+    padding: 50px;
+}
+
+table tr, th, td {
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+    text-align: center
+} 
+td {
+    border-bottom: 2px solid #dddddd;    
+    padding:  6px;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:lightyellow;
+    color:black
+}
+th {
+    padding: 5px;
+    font-size: 14x;
+    background-color:lightblue;
+}
+
+label {
+    margin-top: 5px;
+    margin-right: 5px;
+}

@@ -1,0 +1,47 @@
+<div class="container">
+    <div>  <h1 style="text-align: center;">Exam Schedule List:</h1></div> 
+    <p style="text-align: center;">Class 1st-10th</p> 
+    <p style="text-align: center;">Session:2024-2025</p> 
+        
+        <div>     <button class="button-17" role="button" routerLink="/examschedule">Set Exam Schedule</button></div>
+
+     <table class="table stripe">
+       
+    
+        <tr>
+            <th class="fw-bolder">Exam ID</th>
+            <th>Exam Title</th>
+            
+        
+            <th>Class</th>
+            <th>Subject</th>
+       
+            <th>Exam Type</th>
+            <th>Exam Hall</th>
+            <th>Exam Date</th>
+            <th > Exam Start </th>
+            <th > Exam End</th>
+            <th > Exam Inviligator </th>
+        
+         
+    
+        </tr>
+    
+    
+    
+    
+        <tr *ngFor="let i of examscheduleData">
+            <td>{{i.examID}}</td>
+            <td>{{i.examTitle}}</td>
+            <td>{{i.class1}}</td>
+            <td>{{i.subject}}</td>
+            <td>{{i.examType}}</td>
+            <td>{{i.examHall}}</td>
+            <td>{{i.examDate}}</td>
+            <td>{{i.examStart}}</td>
+            <td>{{i.examEnd}}</td>
+            <td>{{i.examInvigilator}}</td>
+
+
+        
+        

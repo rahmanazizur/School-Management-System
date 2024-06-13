@@ -1,0 +1,91 @@
+<!-- <app-sidebar></app-sidebar> -->
+<!-- <app-sidenav></app-sidenav> -->
+
+
+<div class="row">
+
+    <div class="col-md-2">
+        <div class="sidenav">
+            <div class="wrapper">
+            
+              <div class="sidebar">
+               <div class="profile">
+                          <!-- <img src="../../../assets/images/sumon.jpg"> -->
+                          <img src="{{studentuser.image}}">
+                          <h3>{{studentuser.name}}</h3>
+                          <p>{{studentuser.role}}</p>
+                      </div>
+          
+                      <ul>
+                          <li>
+                              <a href="#" >
+                                  <span class="icon"><i class="fa-solid fa-house"></i></span>
+                                  <span class="item">Home</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/studentpage">
+                                  <span class="icon"><span class="material-symbols-outlined">
+                                    dashboard
+                                    </span> </span>
+                                  <span class="item">Dashboard</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink="/studentpage">
+                                  <span class="icon"> <i class="fa-solid fa-user-graduate"></i></span>
+                                  <span class="item">My details</span>
+                             
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/examscheduleforteacher">
+                                  <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+                                  <span class="item">Exam Schedule</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink="/classtimetableforstudent" >
+                                  <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+                                  <span class="item">Class Routine</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink="/studentfeesubmission" >
+                                  <span class="icon"><span class="material-symbols-outlined">
+                                    payments
+                                    </span></span>
+                                  <span class="item">Fee submission</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink="/viewresult" >
+                                  <span class="icon"><span class="material-symbols-outlined">
+                                    assignment
+                                    </span></span>
+                                  <span class="item">Result</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink="/studentpage" >
+                                  <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                                  <span class="item">Log out</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          
+          
+          </div>
+          
+    
+    </div>
+    
+    <div  class="  col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+    
+    
+    
+    </div>

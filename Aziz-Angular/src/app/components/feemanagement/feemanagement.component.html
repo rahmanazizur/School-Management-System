@@ -1,0 +1,70 @@
+
+<div class="form-container" style="margin-top: 60px;">
+    <h1>Fee Management:</h1>
+  
+    <div class="row">
+  
+      <div class="col-2">
+      </div>
+  
+      <div class="col-10">
+        <form (ngSubmit)="checkForSave()" ngNativeValidate>
+    
+          <div class="input-group">
+            <label><strong>Fee Name:</strong></label>
+            <select id="feeName" name="feeName" style="width: 130px;" [(ngModel)]="feeName" (ngModelChange)="feeNameChanged()" required>
+              <option *ngFor="let feeName of allFeeNameList" [value]="feeName">{{feeName}}</option>
+            </select>
+          </div>
+          
+          <div class="input-group" *ngIf="feeName == 'Monthly Fee'">
+            <label><strong>Month Name:</strong></label>
+            <select id="monthName" name="monthName" style="width: 130px;" [(ngModel)]="monthName" required>
+              <option *ngFor="let monthName of monthNameList" [value]="monthName">{{monthName}}</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Amount:</strong></label>
+            <input type="text" id="feeAmount" name="feeAmount" [(ngModel)]="feeAmount" required>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Applied To Class:</strong></label>
+            <div class="form-group">
+                <label style="margin-right: 2px;">1st</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_one">
+                <label style="margin-right: 2px;">2nd</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_two">
+                <label style="margin-right: 2px;">3rd</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_three">
+                <label style="margin-right: 2px;">4th</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_four">
+                <label style="margin-right: 2px;">5th</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_five">
+                <label style="margin-right: 2px;">6th</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_six">
+                <label style="margin-right: 2px;">7th</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_seven">
+                <label style="margin-right: 2px;">8th</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_eight">
+                <label style="margin-right: 2px;">9th</label ><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_nine">
+                <label style="margin-right: 2px;">10th</label><input type="checkbox" name="checkbox" [(ngModel)]="applied_to_ten">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Fee Submission Start Date</strong></label>
+            <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate" required>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Fee Submission End Date</strong></label>
+            <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate" required>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4">
+              <button type="submit">Save Fee Details</button>
+            </div>
+            <div class="col-md-5 pull-right">
+              <button type="button" (click)="navigateToViewFeeRecords()">Check and Approve Fees</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>

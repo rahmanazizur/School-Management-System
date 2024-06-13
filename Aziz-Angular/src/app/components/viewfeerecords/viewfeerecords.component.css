@@ -1,0 +1,141 @@
+.container-query{
+    background-color: rgb(230, 234, 238);
+    padding: 20px 30px 20px;
+    margin-top: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
+    position: relative;
+    width: 90%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 0px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-query button {
+    float: right; 
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+
+h1{
+   
+    color:black;
+    text-align: center;
+    font-size: 18pt;
+    font-family: 'Times New Roman', Times, serif;
+}
+hr{
+size: 0cm;
+}
+
+
+.input-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    position: relative;
+
+}
+.input-group label{
+    flex-basis: 18%;
+}
+.input-group input, .input-group textarea{
+    flex-basis: 20%;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    background-color: rgb(247, 244, 244);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+::placeholder{
+    font-size: 14px;
+}
+
+form button{
+    background: #141a34;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 10px 40px;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 10px;
+}
+
+form button:hover{
+
+    background-color: green;
+    cursor: pointer;
+}
+
+fieldset {
+    margin-bottom: 1em !important;
+    border: 1px solid #666 !important;
+    padding:1px !important;
+}
+
+legend {
+    padding: 1px 10px !important;
+    float:none;
+    width:auto;
+}
+
+label{
+    padding: 2px;
+}
+
+
+table tr, th, td {
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+} 
+td {
+    border-bottom: 2px solid #dddddd;    
+    padding:  6px;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:lightyellow;
+    color:black;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+th {
+    padding: 5px;
+    font-size: 14x;
+    background-color:lightblue;
+}
+
+.modal-content-fullscreen {
+    width: 130% !important;
+    height: 94% !important;
+    margin: 5px auto !important;
+}
+
+.input-group-modal{
+    display: inline-block;
+    align-items: center;
+    position: relative;
+
+}
+.input-group-modal label{
+    flex-basis: 18%;
+}
+.input-group-modal input, .input-group-modal textarea{
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    /* background-color: rgb(247, 244, 244); */
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}

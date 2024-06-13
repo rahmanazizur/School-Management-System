@@ -1,0 +1,56 @@
+<div class="container">
+<div>  <h1>Teachers Details:</h1></div>  
+    
+    <div>    <button class="button-29" role="button" routerLink="/addteacher">Add Teacher</button></div>
+ <table class="table stripe">
+   
+
+    <tr>
+
+        <th class="fw-bolder">ID</th>
+      
+        <th> Name</th>
+    
+        <th>Email</th>
+        <th>Password</th>
+   
+        <th>Qualification</th>
+        <th>Mobile no </th>
+        <th > Role</th>
+        <th > Status</th>
+        <th > Joining Date</th>
+    
+     
+
+    </tr>
+
+
+
+
+    <tr *ngFor="let i of allteacherdata">
+
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>{{i.qualification}}</td>
+        <td>{{i.mob}}</td>
+        <td>{{i.role}}</td>
+        <td>{{i.status}}</td>
+        <td>{{i.joining_date}}</td>
+    
+
+
+<!-- 
+        <td>   <button type="button" (click)="search(i.student_id)" > <i class="fa-solid ww fa-pen-to-square"></i></button>    </td> 
+      <td>   <button type="button" (click)="delete(i.student_id)" > <i class="fa-solid ss fa-trash-can"></i></button>    </td>  
+       
+       -->
+       
+    </tr>
+
+
+
+</table>
+
+</div>

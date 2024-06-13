@@ -1,0 +1,51 @@
+<div class="container" style="margin-top: 60px;">
+    <h1> RESULT: </h1> 
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-3 input-group-modal" style="padding: 2px;">
+            <label>Student ID:</label>
+            <input type="text" id="studId" name="studId" [(ngModel)]="currentStudent.student_id" [disabled]="true">
+        </div>
+        <div class="col-md-3 input-group-modal" style="padding: 2px;">
+            <label>Student Name:</label>
+            <input type="text" id="studName" name="studName" [(ngModel)]="currentStudent.full_name" [disabled]="true">
+        </div>
+        <div class="col-md-3 input-group-modal" style="padding: 2px;">
+            <label>Class:</label>
+            <input type="text" id="class1" name="class1" [(ngModel)]="currentStudent.class1" [disabled]="true">
+        </div>
+        <div class="col-md-3 input-group-modal" style="padding: 2px;">
+            <label>Section:</label>
+            <input type="text" id="section" name="section" [(ngModel)]="currentStudent.section" [disabled]="true">
+        </div>
+    </div>
+    <div class="input-group" style="margin-top: 20px;">
+        <div class="col-md-4">
+            <label><strong>Exam Title:</strong></label>
+            <select id="examTitle" name="examTitle" [(ngModel)]="examTitle" 
+                (ngModelChange)="getStudentResultInfoList()">
+                <option *ngFor="let examTitle of allExamTitleList" [value]="examTitle">{{examTitle}}</option>
+            </select>
+        </div>
+    </div>
+
+    <table class="table stripe grid" style="margin-top:20px;">
+        <tr>
+            <th *ngFor="let subject of allSubjectList">{{subject}}</th>
+            <th>Total Marks</th>
+            <th>Grade</th>
+            <th>Pass/Fail</th>
+          </tr>
+
+          <tr *ngFor="let studentResult of studentResultInfoList">
+            <td *ngFor="let subject of studentResult?.subjectwise_result_map?.keys()">
+              {{studentResult.subjectwise_result_map.get(subject)}}
+            </td>
+            <td>{{studentResult.total_marks}}</td>
+            <td>{{studentResult.grade}}</td>
+            <td [ngStyle]="studentResult.pass_fail == 'PASS' ? {'background-color': '#5BC85B'} 
+              : studentResult.pass_fail == 'FAIL' ? {'background-color': '	#FF033E'} : null">{{studentResult.pass_fail == 'PASS' ? 'PASS' : studentResult.pass_fail == 'FAIL' ? 'FAIL' : null}}</td>
+          </tr>
+    </table>
+
+    </div>
+  

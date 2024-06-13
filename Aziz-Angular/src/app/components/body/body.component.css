@@ -1,0 +1,92 @@
+.back-img{
+background-image: url("../../../assets/images/happy-children-back-home-after-school_43633-8588.jpg");
+
+height: 110%;
+width: 100%;
+background-repeat: no-repeat;
+
+background-size: cover;
+
+
+
+}
+
+.container{
+
+    margin-top: 6px;
+   
+}
+h1 p{
+
+    font-family:'Times New Roman', Times, serif;
+    font-size: 22pt;
+    /* color: #011127; */
+    color:aqua;
+    text-align: center;
+
+
+}
+
+.dd img{
+    margin-left: 20px;
+    margin-top: 50px;
+
+}
+
+span{
+    color:brown;
+}
+
+.card{
+
+    box-shadow: 0px 0px 3px 1px;
+  
+
+}
+.card:hover{
+
+    transform: scale(1.1);
+}
+
+
+h5 b{
+    color:darkgreen
+    
+}
+.d{
+    background-color: aliceblue;;
+    margin-top: 90px;
+    border-radius: 5px;
+}
+
+.ii{
+    color: cadetblue;
+    font-size: 9pt;
+  
+}
+.partner{
+    padding-top: 80px;
+}
+marquee{
+
+    color:beige;
+    font-size: 16pt;
+    padding: 10px;
+  background-color:#057FD1 ;
+}
+
+i:hover{
+    transform: scale(1.2);
+
+}
+
+a {
+
+    text-decoration: none;
+}
+
+a:hover{
+
+    color:crimson
+}
+

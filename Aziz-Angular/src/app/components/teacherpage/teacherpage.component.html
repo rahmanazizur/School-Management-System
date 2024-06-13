@@ -1,0 +1,84 @@
+<div class="row">
+
+    <div class="col-md-2">
+        <div class="sidenav">
+            <div class="wrapper">
+            
+              <div class="sidebar">
+               <div class="profile">
+                          <!-- <img src="../../../assets/images/sumon.jpg"> -->
+                          <img src="{{teacheruser.image}}">
+                          <h3>{{teacheruser.name}}</h3>
+                          <p>{{teacheruser.role}}</p>
+                      </div>
+          
+                      <ul>
+                          <li>
+                              <a routerLink="/homepage">
+                                  <span class="icon"><i class="fa-solid fa-house"></i></span>
+                                  <span class="item">Home</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a   routerLink="/teacherpage">
+                                  <span class="icon"><span class="material-symbols-outlined">
+                                    dashboard
+                                    </span> </span>
+                                  <span class="item">Dashboard</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/examscheduleforteacher">
+                                  <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
+                                  <span class="item">Exam Schedule</span>
+                             
+                              </a>
+                          </li>
+                          <li>
+                              <a   routerLink="/classtimetable" >
+                                  <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
+                                  <span class="item">Class Schedule</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/attendancelist" >
+                                  <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+                                  <span class="item">Attendance</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/studentresult">
+                                  <span class="icon"><i class="fa-solid fa-square-poll-horizontal"></i></span>
+                                  <span class="item">Result</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/teacherpage" >
+                                  <span class="icon"></span>
+                                  <span class="item">Notice Board</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a  routerLink="/teacherpage" >
+                                  <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                                  <span class="item">Log out</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          
+          
+          </div>
+          
+    
+    </div>
+    
+    <div  class="  col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+    
+    
+    
+    </div>
+

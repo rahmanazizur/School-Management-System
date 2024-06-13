@@ -1,0 +1,41 @@
+<div class="container">
+    <div>  <h1>Attendance Sheet:</h1></div>  
+        
+        <div>    <button class="button-17" role="button" routerLink="/attendance" style="margin-bottom: 5px"       >Take Attendance</button>
+        </div>
+
+                <table class="table stripe">
+       
+        <tr>
+    
+            <th class="fw-bolder">Student ID</th>
+          
+            <th> Student Name</th>
+        
+            <th>Class</th>
+            <th>Section</th>
+       
+            <th>Attendance Date</th>
+            <th>Attendance Status </th>
+          
+    
+        </tr>
+    
+    
+        <tr *ngFor="let i of allAttendanceDataList">
+    
+            <td>{{i.studentId}}</td>
+            <td>{{i.studentName}}</td>
+            <td>{{i.class1}}</td>
+            <td>{{i.  section}}</td>
+            <td>{{i.attendanceDate}}</td>
+            <td>{{i.attendanceStatus}}</td>
+          
+           
+        </tr>
+    
+    
+    
+    </table>
+    
+    </div>

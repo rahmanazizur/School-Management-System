@@ -1,0 +1,112 @@
+
+
+
+
+
+
+<div class="form-container" style="margin-top: 60px;">
+    <h1>Add Exam Schedule:</h1>
+  
+    <div class="row">
+  
+      <div class="col-2">
+  
+        <!-- <img src="assets/images/signin2.avif" > -->
+  
+  
+  
+      </div>
+  
+      <div class="col-10">
+        <form (ngSubmit)="examSchedule()">
+    
+          <div class="input-group">
+            <label><strong>Exam Title:</strong></label>
+            <input type="text" placeholder="Enter Your First Name" id="fname" name="examTitle" [(ngModel)]="examTitle" required>
+          </div>
+  
+          <div class="input-group">
+            <label><strong>Class:</strong></label>
+            <select name="class" id="class" name="class" [(ngModel)]="class1" (ngModelChange)="getSubjectList()" required>
+              <option value="" selected="selected">Please select Class</option>
+              <option value="1st">1st</option>
+              <option value="2nd">2nd</option>
+              <option value="3rd">3rd</option>
+              <option value="4th">4th</option>
+              <option value="5th">5th</option>
+              <option value="6th">6th</option>
+              <option value="7th">7th</option>
+              <option value="8th">8th</option>
+              <option value="9th">9th</option>
+              <option value="10th">10th</option>
+  
+            </select>
+          </div>
+          <div class="input-group" *ngIf="class1 == '9th' || class1 == '10th'">
+            <label><strong>Section:</strong></label>
+            <select name="class" id="class" name="class" [(ngModel)]="selectedSection" (ngModelChange)="getSubjectList()" required>
+              <option value="Science">Science</option>
+              <option value="Business Studies">Business Studies</option>
+              <option value="Huminities">Huminities</option>
+            </select>
+          </div>
+
+          <div class="input-group from-group">
+            <label><strong>Subject:</strong></label>
+            <select style="width: 145px;" id="subject" name="subject" [(ngModel)]="subject" required>
+              <option *ngFor="let x of subjectList" [value]="x">{{x}}</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label><strong>Exam Type:</strong></label>
+            <select name="examType" id="examType" name="examType" [(ngModel)]="examType" required>
+              <option value="" selected="selected">Select Subject</option>
+              <option value="Theory">Theory</option>
+              <option value="Pratical">Pratical</option>
+            
+  
+  
+            </select>
+          </div>
+
+  
+          <div class="input-group">
+            <label><strong>Examnination Hall:</strong></label>
+            <input type="text" placeholder="Enter date of Birth" id="examHall" name="examHall" [(ngModel)]="examHall" required>
+          </div>
+  
+
+          <div class="input-group">
+            <label><strong>Exam Date</strong></label>
+            <input type="date" placeholder="Enter Date" id="examstart" name="examDate" [(ngModel)]="examDate" required>
+          </div>
+
+          <div class="input-group">
+            <label><strong>Exam Start  Time</strong></label>
+            <input type="time" placeholder="Enter start time" id="examstart" name="examstart" [(ngModel)]="examStart" required>
+          </div>
+  
+          <div class="input-group">
+            <label><strong>Exam End  Time</strong></label>
+            <input type="time" placeholder="Enter end time" id="examstart" name="examEnd" [(ngModel)]="examEnd" required>
+          </div>
+  
+  
+          <div class="input-group">
+            <label><strong>Exam Invigilator:</strong></label>
+            <select id="examInvigilator" name="examInvigilator" [(ngModel)]="examInvigilator" required>
+                <option *ngFor="let x of allTeacherNameList" [value]="x">{{x}}</option>
+            </select>
+  
+          </div>
+  
+          <button type="submit" >Set Exam Schedule</button>
+  
+        </form>
+      </div>
+  
+  
+  
+    </div>
+  
+  </div>
